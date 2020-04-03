@@ -53,15 +53,56 @@ body {
 }
 
 header {
+    color: #fff;
     background-color: $primary;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
 
     .container {
         display: flex;
-        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    p {
+        font-size: 1.8rem;
+        font-weight: 700;
     }
 
     .menu {
         display: flex;
+        justify-content: space-between;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+                padding: 1.2rem;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    background-color: transparent;
+                    height: .1rem;
+                    position: absolute;
+                    left: 5rem;
+                    right: 5rem;
+                    transition: background-color .2s ease-in, left .4s ease-in-out, right .4s ease-in-out;
+                }
+
+                &:after,
+                &:after {
+                    bottom: 15%;
+                }
+
+                &:hover:before,
+                &:focus:before,
+                &:hover:after,
+                &:focus:after {
+                    background-color: #fff;
+                    left: 1.2rem;
+                    right: 1.2rem;
+                }
+            }
     }
 }
 
