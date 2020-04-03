@@ -57,6 +57,9 @@ header {
     background-color: $primary;
     padding-top: .8rem;
     padding-bottom: .8rem;
+    position: fixed;
+    z-index: 1000;
+    min-width: 100%;
 
     .container {
         display: flex;
@@ -106,8 +109,96 @@ header {
     }
 }
 
+// ajouter le scroll vers le haut pour corriger les ancres
+section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
 .container {
-    max-width: 80%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+#about {
+    min-height: 85vh; // à améliorer avec variable JS
+    background-image: url('../img/portrait.jpg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+        h1 {
+            font-size: 8rem;
+            color: $primary;
+            line-height: 1.2;
+
+                em {
+                    color: $secondary;
+                    font-style: italic;
+                }
+
+                span {
+                    display: block;
+                }
+        }
+
+        pre {
+            font-size: 1.4rem;
+        }
+
+        .information {
+            position: absolute;
+            top: 15%;
+            right: 2%;
+        }
+}
+
+.information {
+    &>li {
+        height: 6rem;
+        width: 6rem;
+        background-color: $primary;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 6rem;
+        color: transparent;
+        line-height: 1.2;
+        transition: all .3s ease-in-out;
+
+            &:hover ul,
+            &:focus ul {
+                display: block;
+                color: #fff;
+            }
+
+            &:hover,
+            &:focus {
+                width: 15rem;
+                border-radius: 4em;
+            }
+    }
+
+    li svg {
+        fill: #fff;
+        position: relative;
+    }
+
+    li ul {
+        display: none;
+        margin-left: 2rem;
+        transition: color 1s ease-in; // c'est tricher ?
+    }
+}
+
+.resume {
+    background-color: $primary;
+    color: #fff;
+    text-align: center;
 }
