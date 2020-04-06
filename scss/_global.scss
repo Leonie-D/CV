@@ -44,6 +44,11 @@
          url('../fonts/open-sans-v17-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 
+// ---------------------- Débugueur ------------------------
+
+// * {
+//     outline: 1px solid #000;
+// }
 
 // ---------------------- Style ------------------------
 
@@ -57,6 +62,9 @@ header {
     background-color: $primary;
     padding-top: .8rem;
     padding-bottom: .8rem;
+    position: fixed;
+    z-index: 1000;
+    min-width: 100%;
 
     .container {
         display: flex;
@@ -106,8 +114,105 @@ header {
     }
 }
 
+// ajouter le scroll vers le haut pour corriger les ancres
+section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
 .container {
-    max-width: 80%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+#about {
+    min-height: 85vh; // à améliorer avec variable JS
+    background-image: url('../img/portrait.jpg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+        h1 {
+            font-size: 8rem;
+            color: $primary;
+            line-height: 1.2;
+
+                em {
+                    color: $secondary;
+                    font-style: italic;
+                }
+
+                span {
+                    display: block;
+                }
+        }
+
+        pre {
+            font-size: 1.4rem;
+        }
+
+        .information {
+            position: absolute;
+            top: 15%;
+            right: 2%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+}
+
+.information {
+    &>li {
+        height: 6rem;
+        width: 6rem;
+        background-color: $primary;
+        border-radius: 3em;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+        transition: width .3s ease-in-out;
+        overflow: hidden;
+
+            &:hover ul li,
+            &:focus ul li{
+                color: #fff;
+            }
+
+            // une astuce pour améliorer la performance ici ?
+            &:hover,
+            &:focus {
+                width: 18rem;
+            }
+    }
+
+    li svg {
+        fill: #fff;
+        min-width: 3rem;
+        max-width: 3rem;
+    }
+
+    li ul {
+        margin-left: 2rem;
+
+            li {
+                min-width: 10rem;
+                color: transparent;
+                transition: color .2s ease-in-out .2s;
+            }
+    }
+}
+
+.resume {
+    background-color: $primary;
+    color: #fff;
+    text-align: center;
 }
