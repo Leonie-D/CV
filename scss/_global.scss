@@ -66,8 +66,7 @@ body {
 header {
     color: #fff;
     background-color: $primary;
-    padding-top: .8rem;
-    padding-bottom: .8rem;
+    padding: .8rem 1rem;
     position: fixed;
     z-index: 1000;
     min-width: 100%;
@@ -208,8 +207,7 @@ header {
 
 // ajouter le scroll vers le haut pour corriger les ancres
 section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding: 4rem 1rem;
 }
 
 h2 {
@@ -234,12 +232,18 @@ a {
 }
 
 .container {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
 }
 
-#about {
+@media screen and (min-width: 45em) {
+    .container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.about {
     min-height: 85vh; // à améliorer avec variable JS
     background-image: url('../img/portrait.jpg');
     background-size: cover;
@@ -251,7 +255,7 @@ a {
     justify-content: flex-start;
 
         h1 {
-            font-size: 8rem;
+            font-size: 6rem;
             color: $primary;
             line-height: 1.2;
 
@@ -265,18 +269,49 @@ a {
                 }
         }
 
-        pre {
-            font-size: 1.4rem;
+        .min-screen {
+            font-size: 1.6rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+        }
+
+        .max-screen {
+            display: none;
         }
 
         .information {
             position: absolute;
             top: 15%;
-            right: 2%;
+            left: 2%;
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
+        }
+}
+
+@media screen and (min-width: 45em) {
+    .about {
+        h1 {
+            font-size: 8rem;
+        }
+
+        .min-screen {
+            display: none;
+        }
+
+        .max-screen {
+            display: block;
+            font-size: 1.4rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+        }
+
+        .information {
+            top: 15%;
+            right: 0;
             align-items: flex-end;
         }
+    }
 }
 
 .information {
@@ -291,6 +326,7 @@ a {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         margin-bottom: 2rem;
+        margin-right: 2rem;
         line-height: 1.2;
         transition: width .3s ease-in-out;
         overflow: hidden;
