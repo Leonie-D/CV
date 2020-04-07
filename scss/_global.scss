@@ -238,40 +238,72 @@ a {
     text-align: center;
 }
 
-.date {
-    display: inline-block;
-    min-width: 10rem;
+.education article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+    text-align: center;
 
-    + p,
-    + h3 {
-        display: inline-block;
-        font-weight: 600;
+        * {
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        .coding-skills,
+        ul[class = "coding-skills"] {
+            max-width: max-content;
+            padding: .5rem 1.5rem;
+            background-color: $primary;
+            color: #fff;
+            position: relative;
+            margin-top: 1.5rem;
+
+                &::before {
+                    content: '';
+                    border-bottom: 1rem solid $primary;
+                    border-left: .8rem solid transparent;
+                    border-right: .8rem solid transparent;
+                    height: 0;
+                    width: 0;
+                    position: absolute;
+                    top: -1rem;
+                    left: calc(50% - .8rem);
+                }
+        }
+}
+
+@media screen and (min-width: 45em) {
+    .education article {
+        display: block;
+        text-align: left;
+
+            .coding-skills::before,
+            ul[class = "coding-skills"]::before {
+                left: 1rem;
+            }
     }
-}
 
-.coding-skills,
-ul[class = "coding-skills"] {
-    max-width: max-content;
-    padding: .5rem 1.5rem;
-    background-color: $primary;
-    color: #fff;
-    position: relative;
-    margin-top: 1.5rem;
-    margin-left: 12rem;
-}
-
-ul[class="mooc"] {
-    margin-left: 12rem;
-}
-
-.coding-skills::before {
-    content: '';
-    border-bottom: 1rem solid $primary;
-    border-left: .8rem solid transparent;
-    border-right: .8rem solid transparent;
-    height: 0;
-    width: 0;
-    position: absolute;
-    top: -1rem;
-    left: 1rem;
+    .date {
+        display: inline-block;
+        min-width: 10rem;
+    
+        + p,
+        + h3 {
+            display: inline-block;
+            font-weight: 600;
+        }
+    }
+    
+    .coding-skills,
+    ul[class = "coding-skills"] {
+        margin-left: 12rem;
+    }
+    
+    ul[class="mooc"] {
+        margin-left: 12rem;
+    }
 }
