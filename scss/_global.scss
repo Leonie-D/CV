@@ -207,13 +207,21 @@ header {
 
 // ajouter le scroll vers le haut pour corriger les ancres
 section {
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
 }
 
 h2 {
     color: $primary;
     font-weight: 700;
     font-size: 2em;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 45em) {
+    h2 {
+        text-align: left;
+    }
 }
 
 h3 {
@@ -404,6 +412,11 @@ a {
         }
 }
 
+.date + p,
+.date + h3 {
+    font-weight: 600;
+}
+
 @media screen and (min-width: 45em) {
     .education article {
         display: block;
@@ -422,7 +435,6 @@ a {
         + p,
         + h3 {
             display: inline-block;
-            font-weight: 600;
         }
     }
     
