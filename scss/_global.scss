@@ -374,7 +374,8 @@ a {
     text-align: center;
 }
 
-.education article {
+.education article,
+.experiences article {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -412,6 +413,12 @@ a {
         }
 }
 
+.experiences article ul {
+    text-align: left;
+    min-width: 100%;
+    margin-left: 2rem;
+}
+
 .date + p,
 .date + h3 {
     font-weight: 600;
@@ -428,6 +435,35 @@ a {
             }
     }
 
+    .experiences article {
+        display: grid;
+        grid-template-areas: 
+            "date titre"
+            "vide poste"
+            "vide skills"
+            "vide code";
+
+            .date {
+                grid-area: date;
+            }
+
+            h3 {
+                grid-area: titre;
+            }
+
+            .content {
+                grid-area: poste;
+            }        
+            
+            ul {
+                grid-area: skills;
+            }
+
+            .coding-skills {
+                grid-area: code;
+            }
+    }
+
     .date {
         display: inline-block;
         min-width: 10rem;
@@ -435,9 +471,12 @@ a {
         + p,
         + h3 {
             display: inline-block;
+            max-width: calc(100% - 10.5rem);
+            vertical-align: top;
+            margin-top: 0;
         }
     }
-    
+
     .coding-skills,
     ul[class = "coding-skills"] {
         margin-left: 12rem;
