@@ -374,7 +374,15 @@ a {
     text-align: center;
 }
 
-// problème de largeur...
+.education,
+.experiences {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .education article {
     display: grid;
     grid-template-areas: 
@@ -393,10 +401,12 @@ a {
             grid-area: titre;
             margin-top: 0;
             font-weight: 600;
+            min-width: max-content;
         }
 
-        .coding-skills,
-        .mooc {
+        p[class = "coding-skills"],
+        ul[class = "coding-skills"],
+        ul[class="mooc"] {
             grid-area: details;
             justify-self: center;
         }
@@ -435,7 +445,8 @@ a {
             min-width: 100%;
         }
 
-        .coding-skills {
+        p[class = "coding-skills"],
+        ul[class = "coding-skills"] {
             grid-area: code;
             justify-self: center;
         }
@@ -464,11 +475,19 @@ ul[class = "coding-skills"] {
 }
 
 @media screen and (min-width: 45em) {
+    .education,
+    .experiences {
+        .container {
+            align-items: flex-start;
+        }
+    }
+
     .education article {
         grid-template-areas:
             "date titre"
             "vide details";
         text-align: left;
+        justify-content: left;
     }
 
     .experiences article {
@@ -478,6 +497,7 @@ ul[class = "coding-skills"] {
             "vide skills"
             "vide code";
         text-align: left;
+        justify-content: left;
     }
 
     .date {
@@ -492,17 +512,15 @@ ul[class = "coding-skills"] {
         }
     }
 
-    .coding-skills,
-    ul[class = "coding-skills"] {
-        margin-left: 12rem;
-    }
-    
-    ul[class="mooc"] {
-        margin-left: 12rem;
-    }
-
     .education article,
     .experiences article {
+        p[class = "coding-skills"],
+        ul[class = "coding-skills"],
+        ul[class="mooc"] {
+            margin-left: 3rem;
+            justify-self: left;
+        }
+
         .coding-skills::before,
         ul[class = "coding-skills"]::before {
             left: 1rem;
