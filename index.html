@@ -10,7 +10,8 @@
         <div class="container">
             <p>Léonie DUSART</p>
             <nav>
-                <ul class="menu">
+                <button class="toggle-menu" aria-expanded="false" aria-controls="menu"><span class="screen-reader-text">Menu</span></button>
+                <ul class="menu" hidden>
                     <li><a href="#about">A propos</a></li>
                     <li><a href="#education">Formation</a></li>
                     <li><a href="#experiences">Expériences et compétences</a></li>
@@ -21,12 +22,13 @@
         </div>
     </header>
     <main>
-        <section id="about">
+        <section id="about" class="about">
             <div class="container">
                 <h1>L<em>é</em>onie <span>DUSART<em>.</em></span></h1>
-                <pre>&lt;!-- Développeuse WEB et WEB mobile --&gt;</pre>
+                <p class="min-screen">&lt;!-- Développeuse WEB --&gt;</p>
+                <p class="min-screen">&lt;!-- et WEB mobile --&gt;</p>
+                <p class="max-screen">&lt;!-- Développeuse WEB et WEB mobile --&gt;</p>
                 <ul class="information">
-                    <!-- ajouter logos svg -->
                     <li>
                         <svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="m19.781 10.597h-5.156v-4.5h-1.688c.499-.661.8-1.496.8-2.401 0-.006 0-.011 0-.017v.001c0-1.296-.613-2.513-1.6-3.177l-.419-.282-.419.282c-.987.664-1.6 1.881-1.6 3.177v.016c0 .905.3 1.74.807 2.411l-.007-.01h-1.874v4.5h-4.406c-1.501.002-2.717 1.218-2.719 2.719v8.434c.001.828.672 1.499 1.5 1.5h18c.828-.001 1.499-.672 1.5-1.5v-8.434c-.002-1.501-1.218-2.717-2.719-2.719zm-8.063-8.462c.328.407.519.959.519 1.545s-.191 1.138-.519 1.545c-.328-.407-.519-.959-.519-1.545s.191-1.138.519-1.545zm-1.593 5.462h3v3h-3zm-7.125 5.719c.001-.673.546-1.218 1.219-1.219h15.563c.673.001 1.218.546 1.219 1.219v1.48l-1.013.447c-.185.083-.401.132-.628.132s-.443-.049-.638-.136l.01.004-1.762-.777-1.762.777c-.185.083-.401.132-.628.132s-.443-.049-.638-.136l.01.004-1.762-.777-1.762.777c-.185.084-.401.132-.628.132s-.443-.049-.638-.136l.01.004-1.762-.777-1.762.777c-.185.084-.401.132-.628.132s-.443-.049-.638-.136l.01.004-1.387-.612zm18 8.434h-18v-5.48l.782.345c.363.164.787.259 1.234.259s.871-.096 1.253-.267l-.019.008 1.157-.51 1.157.51c.363.164.787.259 1.234.259s.871-.096 1.253-.267l-.019.008 1.157-.51 1.157.51c.363.164.787.259 1.234.259s.871-.096 1.253-.267l-.019.008 1.157-.51 1.157.51c.363.164.787.259 1.234.259s.871-.095 1.253-.267l-.019.008.408-.18.001 5.315z"/>
@@ -70,13 +72,13 @@
                 </p>
             </div>
         </section>
-        <section id="education" class="education">
+        <section id="education" class="education scroll">
             <div class="container">
                 <h2>Formation</h2>
                 <article>
                     <p class="date">2020</p>
                     <p class="content">
-                        <a href="https://www.cefim.eu/">CEFIM</a> – développeur web et web mobile
+                        <a href="https://www.cefim.eu/" target="_blank" rel="noopener noreferrer">CEFIM</a> – développeur web et web mobile
                     </p>
                     <ul class="coding-skills">
                         <li>Frontend : HTML, CSS, SASS, Bootstrap, JavaScript, ReactJS, WordPress</li>
@@ -90,8 +92,8 @@
                         Attestations de réussite des MOOC :
                     </p>
                     <ul class="mooc">
-                        <li><a href="https://secnumacademie.gouv.fr/">SecNumacadémie</a></li>
-                        <li><a href="https://atelier-rgpd.cnil.fr/">Atelier RGPD</a></li>
+                        <li><a href="https://secnumacademie.gouv.fr/" target="_blank" rel="noopener noreferrer">SecNumacadémie</a></li>
+                        <li><a href="https://atelier-rgpd.cnil.fr/" target="_blank" rel="noopener noreferrer">Atelier RGPD</a></li>
                     </ul>
                 </article>
                 <article>
@@ -101,7 +103,7 @@
                 <article>
                     <p class="date">2011-2014</p>
                     <p class="content">
-                        <a href="http://www2.agroparistech.fr/">AgroParisTech</a>
+                        <a href="http://www2.agroparistech.fr/" target="_blank" rel="noopener noreferrer">AgroParisTech</a>
                     </p>
                     <p class="coding-skills">
                         Java, PHPmyAdmin, mySQL
@@ -110,7 +112,7 @@
                 <article>
                     <p class="date">2009-2011</p>
                     <p class="content">
-                        <a href="https://www.faidherbe.org/pourquoi-faire-une-cpge">Classe préparatoire BCPST</a>
+                        <a href="https://www.faidherbe.org/pourquoi-faire-une-cpge" target="_blank" rel="noopener noreferrer">Classe préparatoire BCPST</a>
                     </p>
                     <p class="coding-skills">
                         Matlab
@@ -122,67 +124,77 @@
                 </article>
             </div>
         </section>
-        <section id="experiences" class="experiences">
+        <section id="experiences" class="experiences scroll">
             <div class="container">
                 <h2>Expériences et compétences</h2>
                 <article>
                     <p class="date">2015-2019</p>
-                    <h3>Ingénieur chargée de projets à l’<a href="">Institut Technique de l’AVIculture (ITAVI)</a> – 5 ans</h3>
+                    <h3>Ingénieur chargée de projets à l’<a href="https://www.itavi.asso.fr/" target="_blank" rel="noopener noreferrer">Institut Technique de l’AVIculture (ITAVI)</a> – 5 ans</h3>
                     <p class="content">
                         Responsable des thématiques « Alimentation des volailles » et « Durabilité des systèmes »
-                        <ul>
-                            <li>Montage et gestion de projets (appels à projets régionaux, nationaux et européens, projet de recherche privée)</li>
-                            <li>Communications techniques et scientifiques (articles, colloques)</li>
-                            <li>Elaboration de protocoles et suivi d’expérimentations animales</li>
-                            <li>Développement d’outils informatiques (modélisation, optimisation)</li>
-                        </ul>
-                        <p class="coding-skills">
-                            VBA
-                        </p>
+                    </p>
+                    <ul>
+                        <li>Montage et gestion de projets (appels à projets régionaux, nationaux et européens, projet de recherche privée)</li>
+                        <li>Communications techniques et scientifiques (articles, colloques)</li>
+                        <li>Elaboration de protocoles et suivi d’expérimentations animales</li>
+                        <li>Développement d’outils informatiques (modélisation, optimisation)</li>
+                    </ul>
+                    <p class="coding-skills">
+                        VBA
                     </p>
                 </article>
                 <article>
                     <p class="date">2014</p>
-                    <h3>Ingénieur à l’<a href="">Institut Technique de l’AVIculture (ITAVI)</a> – 6 mois</h3>
+                    <h3>Ingénieur à l’<a href="https://www.itavi.asso.fr/" target="_blank" rel="noopener noreferrer">Institut Technique de l’AVIculture (ITAVI)</a> – 6 mois</h3>
                     <p class="content">
                         Evaluation multicritère de la durabilité de différents scénarios d’évolution des filières avicoles
-                        <ul>
-                            <li>Modélisation d’indicateurs économiques et environnementaux à différentes échelles (troupeau, élevage, filière)</li>
-                            <li>Développement de méthodes et d’outils</li>
-                            <li>Evaluation et interprétation de résultats</li>
-                            <li>Communications techniques et scientifiques</li>
-                        </ul>
                     </p>
+                    <ul>
+                        <li>Modélisation d’indicateurs économiques et environnementaux à différentes échelles (troupeau, élevage, filière)</li>
+                        <li>Développement de méthodes et d’outils</li>
+                        <li>Evaluation et interprétation de résultats</li>
+                        <li>Communications techniques et scientifiques</li>
+                    </ul>
                 </article>
                 <article>
                     <p class="date">2013</p>
-                    <h3>Assistante ingénieur auprès de l’association <a href="https://chevredelorraine.fr/">Les Amis de la chèvre Lorraine</a> – 2 mois</h3>
+                    <h3>Assistante ingénieur auprès de l’association <a href="https://chevredelorraine.fr/" target="_blank" rel="noopener noreferrer">Les Amis de la chèvre Lorraine</a> – 2 mois</h3>
                     <p class="content">
                         Etablissement d’un plan d’accouplement pour maîtriser la consanguinité dans une petite population
-                        <ul>
-                            <li>Gestion d’une base de données</li>
-                            <li>Elaboration et mise en place d’un plan d’action</li>
-                        </ul>
-                        <p class="coding-skills">
-                            Requêtes sur Access
-                        </p>
+                    </p>
+                    <ul>
+                        <li>Gestion d’une base de données</li>
+                        <li>Elaboration et mise en place d’un plan d’action</li>
+                    </ul>
+                    <p class="coding-skills">
+                        Requêtes sur Access
                     </p>
                 </article>
             </div>
         </section>
-        <section id="hobbies">
+        <section id="hobbies" class="hobbies scroll">
             <div class="container">
                 <h2>Intérêts</h2>
 
             </div>
         </section>
-        <section id="contact">
+        <section id="contact" class="contact scroll">
             <div class="container">
                 <h2>Contact</h2>
                 <ul>
-                    <!-- ajouter logos svg -->
-                    <li>06.69.12.99.26</li>
-                    <li><a href="mailto:leonie.dusart@gmail.com"></a></li>
+                    <li>
+                        <svg enable-background="new 0 0 35 35" height="35" viewBox="0 0 35 35" width="35" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m25.302 0h-15.604c-1.3 0-2.364 1.063-2.364 2.364v30.271c0 1.301 1.064 2.365 2.364 2.365h15.604c1.3 0 2.364-1.062 2.364-2.364v-30.272c0-1.301-1.064-2.364-2.364-2.364zm-10.298 1.704h4.992c.158 0 .286.128.286.287 0 .158-.128.286-.286.286h-4.992c-.158 0-.286-.128-.286-.286 0-.159.128-.287.286-.287zm2.496 32.114c-.653 0-1.182-.529-1.182-1.183s.529-1.182 1.182-1.182 1.182.528 1.182 1.182-.529 1.183-1.182 1.183zm8.521-3.193h-17.042v-26.876h17.042z"/>
+                        </svg>
+                        06.69.12.99.26
+                    </li>
+                    <li>
+                        <svg enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m469.333 64h-426.666c-23.532 0-42.667 19.135-42.667 42.667v298.667c0 23.531 19.135 42.666 42.667 42.666h426.667c23.531 0 42.666-19.135 42.666-42.667v-298.666c0-23.532-19.135-42.667-42.667-42.667zm-426.666 21.333h426.667c1.572 0 2.957.573 4.432.897-36.939 33.807-159.423 145.859-202.286 184.478-3.354 3.021-8.76 6.625-15.479 6.625s-12.125-3.604-15.49-6.635c-42.859-38.613-165.35-150.671-202.283-184.466 1.478-.324 2.866-.899 4.439-.899zm-21.334 320v-298.666c0-2.09.63-3.986 1.194-5.896 28.272 25.876 113.736 104.06 169.152 154.453-55.236 47.447-140.722 128.495-169.219 155.669-.503-1.814-1.127-3.588-1.127-5.56zm448 21.334h-426.666c-1.704 0-3.219-.594-4.81-.974 29.447-28.072 115.477-109.586 169.742-156.009 7.074 6.417 13.536 12.268 18.63 16.858 8.792 7.938 19.083 12.125 29.771 12.125s20.979-4.188 29.76-12.115c5.096-4.592 11.563-10.448 18.641-16.868 54.268 46.418 140.286 127.926 169.742 156.009-1.591.38-3.104.974-4.81.974zm21.334-21.334c0 1.971-.624 3.746-1.126 5.56-28.508-27.188-113.984-108.227-169.219-155.668 55.418-50.393 140.869-128.57 169.151-154.456.564 1.91 1.194 3.807 1.194 5.897z"/>
+                        </svg>
+                        <a href="mailto:leonie.dusart@gmail.com">mail</a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/in/l%C3%A9onie-dusart-b7483572?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BBiBYsIPbTl68ghzvuc1M6Q%3D%3D" target="_blank" rel="noopener noreferrer">linkedin</a></li>
                     <li>
                         <ul>
                             <li>2 rue Jeanne d’Arc</li>
@@ -194,6 +206,7 @@
         </section>
     </main>
 
+    <script src="js/navigation.js"></script>
     <script src="js/anniversaire.js"></script>
 </body>
 </html>
