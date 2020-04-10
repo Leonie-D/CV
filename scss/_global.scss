@@ -582,8 +582,38 @@ ul[class = "coding-skills"] {
     }
 }
 
-.contact {
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    &>li {
+        display: flex;
+        align-items: center;
+        padding-bottom: .8rem;
+        text-align: center;
+    }
+
     svg {
-        width:6%;
+        width: 3rem;
+        padding-right: .8rem;
+    }
+
+    .postal-adress {
+        display: flex;
+
+            li {
+                padding-right: .5rem;
+            }
+    }
+}
+
+@media screen and (min-width: 45em) {
+    .contact-info {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .postal-adress {
+        flex-direction: column;
     }
 }
