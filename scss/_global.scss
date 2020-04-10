@@ -527,3 +527,57 @@ ul[class = "coding-skills"] {
         }
     }
 }
+
+.hobbies {
+    background-color: $primary;
+
+        h2 {
+            color: #fff;
+        }
+
+        .activities {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-auto-rows: max-content;
+            justify-items : center;
+        
+                li {
+                    width: 40%;
+                    padding: 0 2rem 2rem 2rem;
+                }
+        
+                svg {
+                    fill: #fff;
+                }
+        }
+}
+
+@media screen and (min-width: 28em) {
+    .hobbies .activities {
+        grid-template-columns: repeat(2, 1fr);
+
+        li {
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (min-width: 45em) {
+    .hobbies .activities {
+        grid-template-columns: repeat(3, 1fr);
+
+        li {
+            width: 60%;
+        }
+    }
+}
+
+@media screen and (min-width: 58em) {
+    .hobbies .activities {
+        grid-template-columns: repeat(6, 1fr);
+
+        li {
+            width: 80%;
+        }
+    }
+}
