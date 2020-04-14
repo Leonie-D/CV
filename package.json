@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "scss": "node-sass -w scss --output-style compressed --source-map true -o css"
+    "scss": "node-sass -w scss --output-style compressed --source-map true -o css",
+    "prefix": "postcss css/style.css --use autoprefixer -o css/style.css"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,9 @@
   },
   "homepage": "https://github.com/Leonie-D/CV#readme",
   "devDependencies": {
-    "node-sass": "^4.13.1"
+    "autoprefixer": "^9.7.6",
+    "node-sass": "^4.13.1",
+    "postcss-cli": "^7.1.0",
+    "browserslist": "last 4 versions"
   }
 }
