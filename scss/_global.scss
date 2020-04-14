@@ -205,7 +205,10 @@ header {
     }
 }
 
-// ajouter le scroll vers le haut pour corriger les ancres
+.scroll {
+    scroll-margin-top: 4.4rem;
+}
+
 section {
     padding: 2rem 1rem;
 }
@@ -230,12 +233,12 @@ h3 {
 
 a {
     text-decoration: none;
-    color: $primary;
+    color: $contrast;
     transition: color .2s ease-in-out;
 
         &:hover,
         &:focus {
-            color: $secondary;
+            color: $primary;
         }
 }
 
@@ -333,7 +336,7 @@ a {
         align-items: center;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: .6rem;
         margin-right: 2rem;
         line-height: 1.2;
         transition: width .3s ease-in-out;
@@ -344,9 +347,23 @@ a {
                 color: #fff;
             }
 
+            // pour le tactil
+            &[touchActivated='true'] ul li {
+                color: #fff;
+            }
+
             // une astuce pour améliorer la performance ici ?
             &:hover,
             &:focus {
+                width: 18rem;
+            }
+
+            // pour le tactil
+            &[touchActivated='false'] {
+                width: 6rem;
+            }
+
+            &[touchActivated='true'] {
                 width: 18rem;
             }
     }
@@ -360,11 +377,20 @@ a {
     li ul {
         margin-left: 2rem;
 
-            li {
+            li,
+            li[touchActivated='false'] {
                 min-width: 10rem;
                 color: transparent;
                 transition: color .2s ease-in-out .2s;
             }
+    }
+}
+
+@media screen and (min-width: 45em) {
+    .information {
+        &>li {
+            margin-bottom: 1.5rem;
+        }
     }
 }
 
@@ -401,7 +427,7 @@ a {
             grid-area: titre;
             margin-top: 0;
             font-weight: 600;
-            min-width: max-content;
+            min-width: 100%;
         }
 
         p[class = "coding-skills"],
@@ -585,13 +611,24 @@ ul[class = "coding-skills"] {
 .contact-info {
     display: grid;
     grid-template-columns: 1fr;
+    column-gap: 1.2rem;
+    row-gap: 1.2rem;
     justify-items: center;
+    align-items: center;
 
-    &>li {
+    &>li,
+    a {
         display: flex;
         align-items: center;
-        padding-bottom: .8rem;
         text-align: center;
+    }
+
+    a {
+        transition: fill .3s ease-in-out;
+    }
+
+    a:hover svg {
+        fill: $primary;
     }
 
     svg {
@@ -606,6 +643,26 @@ ul[class = "coding-skills"] {
                 padding-right: .5rem;
             }
     }
+}
+
+.reverse {
+    direction: rtl;
+    position: relative;
+    left: 15%;
+
+        &::before {
+            content: '06';
+            position: absolute;
+            top: 0;
+            left: -34%;
+        }
+
+        &::after {
+            content: '26';
+            position: absolute;
+            top: 0;
+            right: -34%;
+        }
 }
 
 @media screen and (min-width: 45em) {
