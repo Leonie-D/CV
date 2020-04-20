@@ -283,7 +283,10 @@ a {
         .min-screen {
             font-size: 1.6rem;
             font-family: 'Courier New', Courier, monospace;
-            font-weight: 700;
+            font-weight: 600;
+            background-color: rgba($secondary, .5);
+            max-width: 25rem;
+            text-align: center;
         }
 
         .max-screen {
@@ -320,7 +323,10 @@ a {
             display: block;
             font-size: 1.4rem;
             font-family: 'Courier New', Courier, monospace;
-            font-weight: 700;
+            font-weight: 600;
+            background-color: rgba($secondary, .5);
+            max-width: 33.5rem;
+            text-align: center;
         }
 
         .information {
@@ -342,7 +348,7 @@ a {
         align-items: center;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        margin-bottom: .6rem;
+        margin-bottom: .5rem;
         margin-right: 2rem;
         line-height: 1.2;
         transition: width .3s ease-in-out;
@@ -353,7 +359,7 @@ a {
                 color: #fff;
             }
 
-            // pour le tactil
+            // pour le tactile
             &[touchActivated='true'] ul li {
                 color: #fff;
             }
@@ -364,7 +370,7 @@ a {
                 width: 18rem;
             }
 
-            // pour le tactil
+            // pour le tactile
             &[touchActivated='false'] {
                 width: 6rem;
             }
@@ -420,6 +426,7 @@ a {
     grid-template-areas: 
         "date"
         "titre"
+        "skills"
         "details";
     justify-content: center;
     text-align: center;
@@ -436,10 +443,22 @@ a {
             min-width: 100%;
         }
 
+        .details {
+            font-weight: 400;
+            text-align: left;
+            grid-area: details;
+
+            ul {
+                list-style: disc;
+                padding-inline-start: 3rem;
+                margin-top: 0;
+            }
+        }
+
         p[class = "coding-skills"],
         ul[class = "coding-skills"],
         ul[class="mooc"] {
-            grid-area: details;
+            grid-area: skills;
             justify-self: center;
         }
 }
@@ -517,6 +536,7 @@ ul[class = "coding-skills"] {
     .education article {
         grid-template-areas:
             "date titre"
+            "vide skills"
             "vide details";
         text-align: left;
         justify-content: left;
@@ -612,6 +632,45 @@ ul[class = "coding-skills"] {
             width: 80%;
         }
     }
+}
+
+.infobulle {
+    position: relative;
+    cursor: help;
+
+        &:hover::after,
+        &:focus::after,
+        &[touchActivated='true']::after {
+            content: attr(aria-label);
+            position: absolute;
+            background-color: #fff;
+            border-radius: .2em;
+            border: 1px solid $primary;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            min-width: 175%;
+            padding: .5rem 1rem;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        &:hover::before,
+        &:focus::before,
+        &[touchActivated='true']::before {
+            content: "";
+            position: absolute;
+            border-bottom: 1rem solid #fff;
+            border-left: .8rem solid transparent;
+            border-right: .8rem solid transparent;
+            height: 0;
+            width: 0;
+            left: 50%;
+            transform: translateX(-50%); 
+            bottom: -1px;
+            z-index: 2;
+        }
 }
 
 .contact-info {

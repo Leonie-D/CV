@@ -6,3 +6,12 @@ for (let btn of informationButtons) {
         btn.setAttribute('touchActivated', !open);
     });
 };
+
+const interestButtons = document.querySelectorAll('.infobulle');
+
+for (let btn of interestButtons) {
+    btn.addEventListener('click', function(){
+        let open = JSON.parse(btn.getAttribute('touchActivated'));
+        btn.setAttribute('touchActivated', !open);
+    });
+};
